@@ -2,12 +2,12 @@ import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './TodoList.module.css';
 
-export default function TodoList() {
+export default function TodoList({ title }) {
   return (
     <nav className={styles.todoList}>
       <div>
         <input type="checkBox" />
-        <label htmlFor="test"></label>
+        <label htmlFor="test">{title}</label>
       </div>
       <button className={styles['deleted-button']}>
         <MdDelete />
