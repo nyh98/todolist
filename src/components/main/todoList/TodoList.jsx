@@ -7,7 +7,9 @@ export default function TodoList({ title }) {
     <nav className={styles.todoList}>
       <div>
         <input type="checkBox" />
-        <label htmlFor="test">{title}</label>
+        <label htmlFor="test" className={styles['text-style']}>
+          {title}
+        </label>
       </div>
       <button className={styles['deleted-button']}>
         <MdDelete />

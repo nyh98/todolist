@@ -11,7 +11,7 @@ export default function Container() {
     <div className={styles.container}>
       <Header></Header>
       <Main todoTitles={todoTitles}></Main>
-      <InputText></InputText>
+      <InputText setDataFuction={setTodoTitles}></InputText>
     </div>
   );
 }
