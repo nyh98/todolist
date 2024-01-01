@@ -1,13 +1,15 @@
 import React from 'react';
 import styles from './Header.module.css';
-import { IoSunny } from 'react-icons/io5';
+
+import CustomButton from './buttons/CustomButton';
+import DarkModeButton from './buttons/DarkModeButton';
+import NavMenus from './buttons/NavMenus';
 
 export default function Header() {
   return (
     <nav className={styles.top}>
-      <button className={styles['darkMode-button']}>
-        <IoSunny className={styles['darkMode-img']} />
-      </button>
+      <DarkModeButton></DarkModeButton>
+      <NavMenus></NavMenus>
     </nav>
   );
 }

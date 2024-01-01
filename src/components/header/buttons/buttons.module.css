@@ -1,0 +1,19 @@
+.darkMode-img {
+  color: white;
+  transition: all 0.2s linear;
+}
+
+.All-button,
+.Action-button,
+.Completed-button {
+  color: orange;
+  transition: all 0.2s linear;
+}
+
+.darkMode-img:hover,
+.All-button:hover,
+.Action-button:hover,
+.Completed-button:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}

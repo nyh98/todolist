@@ -1,0 +1,13 @@
+.todoList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleted-button {
+  transition: all 0.2s linear;
+}
+
+.deleted-button:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
