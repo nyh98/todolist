@@ -10,7 +10,7 @@ export default function Container() {
   return (
     <div className={styles.container}>
       <Header></Header>
-      <Main todo={todoList}></Main>
+      <Main todo={todoList} setTodo={setTodo}></Main>
       <InputText setTodo={setTodo}></InputText>
     </div>
   );
