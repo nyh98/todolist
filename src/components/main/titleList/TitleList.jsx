@@ -13,7 +13,13 @@ export default function TitleList({ title, setTodo }) {
       </div>
       <button
         className={styles['deleted-button']}
-        onClick={() => setTodo(prev => prev.filter(list => title !== list))}
+        onClick={() =>
+          setTodo(prev => {
+            const index = prev.indexOf(title);
+            prev.splice(index, 1);
+            return [...prev];
+          })
+        }
       >
         <MdDelete />
       </button>

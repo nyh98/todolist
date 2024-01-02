@@ -17,8 +17,8 @@ export default function InputText({ setTodo }) {
         onClick={e => {
           if (text) {
             setTodo(prev => [...prev, text]);
+            document.getElementById('list-input-box').value = '';
           }
-          document.getElementById('list-input-box').value = '';
         }}
       >
         Add
