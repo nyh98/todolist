@@ -5,14 +5,20 @@ export default function InputText({ setDataFuction }) {
   let text = '';
   return (
     <nav className={styles.inputText}>
-      <input id="input" type="text" onInput={ev => (text = ev.target.value)} />
+      <input
+        id="list-input-box"
+        type="text"
+        placeholder="Add Todo"
+        onInput={e => (text = e.target.value)}
+        className={styles['input-box']}
+      />
       <button
         className={styles['input-button']}
         onClick={e => {
           if (text) {
             setDataFuction(prev => [...prev, text]);
           }
-          document.getElementById('input').value = '';
+          document.getElementById('list-input-box').value = '';
         }}
       >
         Add

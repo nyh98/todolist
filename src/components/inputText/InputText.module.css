@@ -10,6 +10,24 @@
 }
 
 .input-button {
+  cursor: pointer;
+  height: 20px;
+  width: 50px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: orange;
   color: white;
+}
+
+.input-box {
+  border: 0;
+  padding-left: 7px;
+  height: 18px;
+  width: 180px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.input-box:focus {
+  outline: none;
 }
