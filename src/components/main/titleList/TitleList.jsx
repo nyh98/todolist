@@ -2,12 +2,19 @@ import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './TitleList.module.css';
 
-export default function TitleList({ title, setTodo }) {
+export default function TitleList({ title, setTodo, darkMode }) {
   return (
     <nav className={styles.todoList}>
       <div>
         <input type="checkBox" />
-        <label htmlFor="test" className={styles['text-style']}>
+        <label
+          htmlFor="test"
+          className={
+            darkMode
+              ? styles['text-style-darkMode']
+              : styles['text-style-basic']
+          }
+        >
           {title}
         </label>
       </div>

@@ -1,14 +1,12 @@
 import React from 'react';
 import styles from './Header.module.css';
-
-import CustomButton from './buttons/CustomButton';
 import DarkModeButton from './buttons/DarkModeButton';
 import NavMenus from './buttons/NavMenus';
 
-export default function Header() {
+export default function Header({ darkMode, setDarkMode }) {
   return (
-    <nav className={styles.top}>
-      <DarkModeButton></DarkModeButton>
+    <nav className={darkMode ? styles['top-darkMode'] : styles['top-basic']}>
+      <DarkModeButton setDarkMode={setDarkMode}></DarkModeButton>
       <NavMenus></NavMenus>
     </nav>
   );

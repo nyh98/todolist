@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './InputText.module.css';
 
-export default function InputText({ setTodo }) {
+export default function InputText({ setTodo, darkMode }) {
   let text = '';
   return (
-    <nav className={styles.inputText}>
+    <nav
+      className={
+        darkMode ? styles['inputText-darkMode'] : styles['inputText-basic']
+      }
+    >
       <input
         id="list-input-box"
         type="text"

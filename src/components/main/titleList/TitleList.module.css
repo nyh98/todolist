@@ -13,7 +13,12 @@
   transform: scale(1.4);
 }
 
-.text-style {
+.text-style-basic {
   color: white;
+  margin-left: 5px;
+}
+
+.text-style-darkMode {
+  color: black;
   margin-left: 5px;
 }

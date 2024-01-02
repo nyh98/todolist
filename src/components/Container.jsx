@@ -6,12 +6,13 @@ import InputText from './inputText/InputText';
 
 export default function Container() {
   const [todoList, setTodo] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <div className={styles.container}>
-      <Header></Header>
-      <Main todo={todoList} setTodo={setTodo}></Main>
-      <InputText setTodo={setTodo}></InputText>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode}></Header>
+      <Main darkMode={darkMode} todo={todoList} setTodo={setTodo}></Main>
+      <InputText darkMode={darkMode} setTodo={setTodo}></InputText>
     </div>
   );
 }
