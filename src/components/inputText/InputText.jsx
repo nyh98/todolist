@@ -5,11 +5,7 @@ export default function InputText({ setDataFuction }) {
   let text = '';
   return (
     <nav className={styles.inputText}>
-      <input
-        id={'input'}
-        type="text"
-        onInput={ev => (text = ev.target.value)}
-      />
+      <input id="input" type="text" onInput={ev => (text = ev.target.value)} />
       <button
         className={styles['input-button']}
         onClick={e => {

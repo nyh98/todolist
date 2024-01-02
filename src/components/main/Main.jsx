@@ -6,7 +6,7 @@ export default function Main({ todoTitles }) {
   return (
     <main className={styles['main-text']}>
       {todoTitles.map(title => (
-        <TodoList title={title}></TodoList>
+        <TodoList title={title} key={title[0]}></TodoList>
       ))}
     </main>
   );
