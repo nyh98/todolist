@@ -5,8 +5,8 @@ import styles from './buttons.module.css';
 
 export default function DarkModeButton() {
   return (
-    <CustomButton
-      text={<IoSunny className={styles['darkMode-img']} />}
-    ></CustomButton>
+    <CustomButton>
+      <IoSunny className={styles['darkMode-img']} />
+    </CustomButton>
   );
 }
