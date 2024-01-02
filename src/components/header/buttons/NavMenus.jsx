@@ -5,9 +5,9 @@ import styles from './buttons.module.css';
 export default function NavMenus() {
   return (
     <nav>
-      <CustomButton style={styles['All-button']}>All</CustomButton>
-      <CustomButton style={styles['Action-button']}>Action</CustomButton>
-      <CustomButton style={styles['Completed-button']}>Completed</CustomButton>
+      <CustomButton style={styles['button-style']}>All</CustomButton>
+      <CustomButton style={styles['button-style']}>Action</CustomButton>
+      <CustomButton style={styles['button-style']}>Completed</CustomButton>
     </nav>
   );
 }

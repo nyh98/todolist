@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './Header.module.css';
 import DarkModeButton from './buttons/DarkModeButton';
 import NavMenus from './buttons/NavMenus';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
-export default function Header({ darkMode, setDarkMode }) {
+//darkMode, setDarkMode
+export default function Header() {
+  const { darkMode } = useContext(DarkModeContext);
   return (
     <nav className={darkMode ? styles['top-darkMode'] : styles['top-basic']}>
-      <DarkModeButton
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      ></DarkModeButton>
+      <DarkModeButton></DarkModeButton>
       <NavMenus></NavMenus>
     </nav>
   );

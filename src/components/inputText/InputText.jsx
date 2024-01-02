@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './InputText.module.css';
+import { DarkModeContext } from '../../context/DarkModeContext';
 
-export default function InputText({ setTodo, darkMode }) {
+export default function InputText({ setTodo }) {
+  const { darkMode } = useContext(DarkModeContext);
   let text = '';
   return (
     <nav

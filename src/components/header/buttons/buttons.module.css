@@ -7,18 +7,14 @@
   transition: all 0.2s linear;
 }
 
-.All-button,
-.Action-button,
-.Completed-button {
+.button-style {
   color: orange;
   transition: all 0.2s linear;
 }
 
 .whiteMode-img:hover,
 .darkMode-img:hover,
-.All-button:hover,
-.Action-button:hover,
-.Completed-button:hover {
+.button-style:hover {
   cursor: pointer;
   color: orange;
   transform: scale(1.4);

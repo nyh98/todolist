@@ -5,10 +5,10 @@ import styles from './TitleList.module.css';
 export default function TitleList({ title, setTodo, darkMode }) {
   return (
     <nav className={styles.todoList}>
-      <div>
+      <div className="checkList">
         <input type="checkBox" />
         <label
-          htmlFor="test"
+          htmlFor="checkBox"
           className={
             darkMode
               ? styles['text-style-darkMode']
