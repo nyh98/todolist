@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './InputText.module.css';
 
-export default function InputText({ setDataFuction }) {
+export default function InputText({ setTodo }) {
   let text = '';
   return (
     <nav className={styles.inputText}>
@@ -16,7 +16,7 @@ export default function InputText({ setDataFuction }) {
         className={styles['input-button']}
         onClick={e => {
           if (text) {
-            setDataFuction(prev => [...prev, text]);
+            setTodo(prev => [...prev, text]);
           }
           document.getElementById('list-input-box').value = '';
         }}

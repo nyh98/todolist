@@ -5,13 +5,13 @@ import Main from './main/Main';
 import InputText from './inputText/InputText';
 
 export default function Container() {
-  const [todoTitles, setTodoTitles] = useState([]);
+  const [todoList, setTodo] = useState([]);
 
   return (
     <div className={styles.container}>
       <Header></Header>
-      <Main todoTitles={todoTitles}></Main>
-      <InputText setDataFuction={setTodoTitles}></InputText>
+      <Main todo={todoList}></Main>
+      <InputText setTodo={setTodo}></InputText>
     </div>
   );
 }
