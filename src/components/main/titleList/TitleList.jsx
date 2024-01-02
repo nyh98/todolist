@@ -2,11 +2,20 @@ import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './TitleList.module.css';
 
-export default function TitleList({ title, setTodo, darkMode }) {
+export default function TitleList({ title, darkMode, setTodo }) {
   return (
     <nav className={styles.todoList}>
       <div className="checkList">
-        <input type="checkBox" />
+        <input
+          type="checkBox"
+          onClick={e => {
+            setTodo(prev => {
+              const index = prev.findIndex(list => list.title === title);
+              prev[index].checked = e.target.checked;
+              return [...prev];
+            });
+          }}
+        />
         <label
           htmlFor="checkBox"
           className={
@@ -22,7 +31,7 @@ export default function TitleList({ title, setTodo, darkMode }) {
         className={styles['deleted-button']}
         onClick={() =>
           setTodo(prev => {
-            const index = prev.indexOf(title);
+            const index = prev.findIndex(list => list.title === title);
             prev.splice(index, 1);
             return [...prev];
           })

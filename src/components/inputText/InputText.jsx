@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import styles from './InputText.module.css';
 import { DarkModeContext } from '../../context/DarkModeContext';
+import { TodoListContext } from '../../context/TodoListContext';
 
-export default function InputText({ setTodo }) {
+export default function InputText() {
   const { darkMode } = useContext(DarkModeContext);
+  const [todo, setTodo] = useContext(TodoListContext);
   let text = '';
   return (
     <nav
@@ -22,7 +24,7 @@ export default function InputText({ setTodo }) {
         className={styles['input-button']}
         onClick={e => {
           if (text) {
-            setTodo(prev => [...prev, text]);
+            setTodo(prev => [...prev, { title: text, checked: false }]);
             document.getElementById('list-input-box').value = '';
           }
         }}

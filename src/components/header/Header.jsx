@@ -4,7 +4,6 @@ import DarkModeButton from './buttons/DarkModeButton';
 import NavMenus from './buttons/NavMenus';
 import { DarkModeContext } from '../../context/DarkModeContext';
 
-//darkMode, setDarkMode
 export default function Header() {
   const { darkMode } = useContext(DarkModeContext);
   return (
