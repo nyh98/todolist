@@ -10,42 +10,32 @@ export default function Main() {
   const [todo] = useContext(TodoListContext);
   const { currentView } = useContext(CurrentViewContext);
 
+  function cratedTitleList(list, index) {
+    return (
+      <TitleList
+        id={list.id}
+        key={index}
+        darkMode={darkMode}
+        title={list.title}
+      ></TitleList>
+    );
+  }
+
   function viewItems() {
     switch (currentView.current) {
       case 'All':
-        return todo.map((list, index) => (
-          <TitleList
-            id={list.id}
-            key={index}
-            darkMode={darkMode}
-            title={list.title}
-          ></TitleList>
-        ));
+        return todo.map((list, index) => cratedTitleList(list, index));
       case 'Action':
         return todo.map((list, index) => {
           if (list.checked === false) {
-            return (
-              <TitleList
-                id={list.id}
-                key={index}
-                darkMode={darkMode}
-                title={list.title}
-              ></TitleList>
-            );
+            return cratedTitleList(list, index);
           }
           return null;
         });
       case 'Completed':
         return todo.map((list, index) => {
           if (list.checked === true) {
-            return (
-              <TitleList
-                id={list.id}
-                key={index}
-                darkMode={darkMode}
-                title={list.title}
-              ></TitleList>
-            );
+            return cratedTitleList(list, index);
           }
           return null;
         });
