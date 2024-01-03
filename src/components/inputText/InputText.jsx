@@ -14,7 +14,7 @@ export default function InputText() {
   }
 
   function enterkey(e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13 && text) {
       updateTodo();
     }
   }
