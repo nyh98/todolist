@@ -13,7 +13,7 @@ export default function NavMenus() {
     Completed: 'Completed',
   };
 
-  function checkCurrentMenu(menuName) {
+  function checkCurrentMenuStyle(menuName) {
     return currentView.current === menuName
       ? darkMode
         ? styles['curren-view-menu-darkMode']
@@ -30,7 +30,7 @@ export default function NavMenus() {
         }
       >
         {menuNames.All}
-        <div className={checkCurrentMenu(menuNames.All)}></div>
+        <div className={checkCurrentMenuStyle(menuNames.All)}></div>
       </CustomButton>
       <CustomButton
         style={styles['button-style']}
@@ -39,7 +39,7 @@ export default function NavMenus() {
         }
       >
         {menuNames.Action}
-        <div className={checkCurrentMenu(menuNames.Action)}></div>
+        <div className={checkCurrentMenuStyle(menuNames.Action)}></div>
       </CustomButton>
       <CustomButton
         style={styles['button-style']}
@@ -48,7 +48,7 @@ export default function NavMenus() {
         }
       >
         {menuNames.Completed}
-        <div className={checkCurrentMenu(menuNames.Completed)}></div>
+        <div className={checkCurrentMenuStyle(menuNames.Completed)}></div>
       </CustomButton>
     </nav>
   );
