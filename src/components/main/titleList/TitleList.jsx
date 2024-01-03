@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './TitleList.module.css';
+import { TodoListContext } from '../../../context/TodoListContext';
 
-export default function TitleList({ title, darkMode, setTodo }) {
+export default function TitleList({ title, darkMode }) {
+  const [todo, setTodo] = useContext(TodoListContext);
+  const index = todo.findIndex(list => list.title === title);
   return (
     <nav className={styles.todoList}>
       <div className="checkList">
         <input
           type="checkBox"
-          onClick={e => {
+          onChange={e => {
             setTodo(prev => {
-              const index = prev.findIndex(list => list.title === title);
               prev[index].checked = e.target.checked;
               return [...prev];
             });
           }}
+          checked={todo[index].checked}
         />
         <label
           htmlFor="checkBox"
@@ -31,7 +34,6 @@ export default function TitleList({ title, darkMode, setTodo }) {
         className={styles['deleted-button']}
         onClick={() =>
           setTodo(prev => {
-            const index = prev.findIndex(list => list.title === title);
             prev.splice(index, 1);
             return [...prev];
           })

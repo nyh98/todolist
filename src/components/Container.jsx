@@ -5,14 +5,17 @@ import Main from './main/Main';
 import InputText from './inputText/InputText';
 import { DarkModeProvider } from '../context/DarkModeContext';
 import { TodoListProvider } from '../context/TodoListContext';
+import { CurrentViewProvider } from '../context/CurrentViewContext';
 
 export default function Container() {
   return (
     <div className={styles.container}>
       <DarkModeProvider>
         <TodoListProvider>
-          <Header></Header>
-          <Main></Main>
+          <CurrentViewProvider>
+            <Header></Header>
+            <Main></Main>
+          </CurrentViewProvider>
           <InputText></InputText>
         </TodoListProvider>
       </DarkModeProvider>
