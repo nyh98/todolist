@@ -14,21 +14,20 @@ export default function NavMenus() {
   };
 
   function checkCurrentMenu(menuName) {
-    const style =
-      currentView.current === menuName
-        ? darkMode
-          ? styles['curren-view-menu-darkMode']
-          : styles['curren-view-menu']
-        : null;
-
-    return style;
+    return currentView.current === menuName
+      ? darkMode
+        ? styles['curren-view-menu-darkMode']
+        : styles['curren-view-menu']
+      : null;
   }
 
   return (
     <nav>
       <CustomButton
         style={styles['button-style']}
-        clickEvent={() => setCurrentView(prev => ({ ...prev, current: 'All' }))}
+        clickEvent={() =>
+          setCurrentView(prev => ({ ...prev, current: menuNames.All }))
+        }
       >
         {menuNames.All}
         <div className={checkCurrentMenu(menuNames.All)}></div>
@@ -36,7 +35,7 @@ export default function NavMenus() {
       <CustomButton
         style={styles['button-style']}
         clickEvent={() =>
-          setCurrentView(prev => ({ ...prev, current: 'Action' }))
+          setCurrentView(prev => ({ ...prev, current: menuNames.Action }))
         }
       >
         {menuNames.Action}
@@ -45,7 +44,7 @@ export default function NavMenus() {
       <CustomButton
         style={styles['button-style']}
         clickEvent={() =>
-          setCurrentView(prev => ({ ...prev, current: 'Completed' }))
+          setCurrentView(prev => ({ ...prev, current: menuNames.Completed }))
         }
       >
         {menuNames.Completed}
