@@ -31,7 +31,7 @@ export default function InputText() {
         placeholder="Add Todo"
         onInput={e => (text = e.target.value)}
         className={styles['input-box']}
-        onKeyUp={enterkey}
+        onKeyDown={enterkey}
       />
       <button
         className={styles['input-button']}
