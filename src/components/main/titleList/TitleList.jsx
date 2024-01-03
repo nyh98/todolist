@@ -14,7 +14,7 @@ export default function TitleList({ title, darkMode }) {
     });
   }
 
-  function deletedItem(e) {
+  function deletedItem() {
     setTodo(prev => {
       prev.splice(index, 1);
       return [...prev];
