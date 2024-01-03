@@ -15,9 +15,10 @@ export default function Main() {
       case 'All':
         return todo.map((list, index) => (
           <TitleList
-            title={list.title}
+            id={list.id}
             key={index}
             darkMode={darkMode}
+            title={list.title}
           ></TitleList>
         ));
       case 'Action':
@@ -25,9 +26,10 @@ export default function Main() {
           if (list.checked === false) {
             return (
               <TitleList
-                title={list.title}
+                id={list.id}
                 key={index}
                 darkMode={darkMode}
+                title={list.title}
               ></TitleList>
             );
           }
@@ -38,9 +40,10 @@ export default function Main() {
           if (list.checked === true) {
             return (
               <TitleList
-                title={list.title}
+                id={list.id}
                 key={index}
                 darkMode={darkMode}
+                title={list.title}
               ></TitleList>
             );
           }

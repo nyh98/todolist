@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './InputText.module.css';
+import { v4 as uuidv4 } from 'uuid';
 import { DarkModeContext } from '../../context/DarkModeContext';
 import { TodoListContext } from '../../context/TodoListContext';
 
@@ -9,7 +10,7 @@ export default function InputText() {
   let text = '';
 
   function updateTodo() {
-    setTodo(prev => [...prev, { title: text, checked: false }]);
+    setTodo(prev => [...prev, { title: text, checked: false, id: uuidv4() }]);
     document.getElementById('list-input-box').value = '';
   }
 

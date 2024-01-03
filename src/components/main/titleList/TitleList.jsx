@@ -3,9 +3,9 @@ import { MdDelete } from 'react-icons/md';
 import styles from './TitleList.module.css';
 import { TodoListContext } from '../../../context/TodoListContext';
 
-export default function TitleList({ title, darkMode }) {
+export default function TitleList({ id, darkMode, title }) {
   const [todo, setTodo] = useContext(TodoListContext);
-  const index = todo.findIndex(list => list.title === title);
+  const index = todo.findIndex(list => list.id === id);
 
   function checkedItem(e) {
     setTodo(prev => {

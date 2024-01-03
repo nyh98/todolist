@@ -3,9 +3,9 @@ import { createContext, useEffect, useState } from 'react';
 export const TodoListContext = createContext();
 
 export function TodoListProvider({ children }) {
-  const [todo, setTodo] = useState([
-    { title: 'This is amazing', checked: false },
-  ]);
+  const [todo, setTodo] = useState(
+    JSON.parse(localStorage.getItem('todo') || '[]')
+  );
 
   useEffect(() => {
     localStorage.setItem('todo', JSON.stringify(todo));
