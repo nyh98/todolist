@@ -36,6 +36,9 @@ export default function TitleList({ title, darkMode }) {
               ? styles['text-style-darkMode']
               : styles['text-style-basic']
           }
+          style={
+            todo[index].checked ? { textDecoration: 'line-through' } : null
+          }
         >
           {title}
         </label>
