@@ -10,7 +10,8 @@ export default function TitleList({ title, darkMode }) {
     <nav className={styles.todoList}>
       <div className="checkList">
         <input
-          type="checkBox"
+          id="check"
+          type="checkbox"
           onChange={e => {
             setTodo(prev => {
               prev[index].checked = e.target.checked;
@@ -20,7 +21,7 @@ export default function TitleList({ title, darkMode }) {
           checked={todo[index].checked}
         />
         <label
-          htmlFor="checkBox"
+          htmlFor="check"
           className={
             darkMode
               ? styles['text-style-darkMode']
