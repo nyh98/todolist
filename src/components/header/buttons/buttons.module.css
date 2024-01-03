@@ -19,3 +19,13 @@
   color: orange;
   transform: scale(1.4);
 }
+
+.curren-view-menu {
+  height: 1.5px;
+  background-color: white;
+}
+
+.curren-view-menu-darkMode {
+  height: 1.5px;
+  background-color: black;
+}
