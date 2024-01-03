@@ -13,6 +13,12 @@ export default function InputText() {
     document.getElementById('list-input-box').value = '';
   }
 
+  function enterkey(e) {
+    if (e.keyCode == 13) {
+      updateTodo();
+    }
+  }
+
   return (
     <nav
       className={
@@ -25,6 +31,7 @@ export default function InputText() {
         placeholder="Add Todo"
         onInput={e => (text = e.target.value)}
         className={styles['input-box']}
+        onKeyUp={enterkey}
       />
       <button
         className={styles['input-button']}
