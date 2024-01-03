@@ -11,14 +11,7 @@ export default function Main() {
   const { currentView } = useContext(CurrentViewContext);
 
   function cratedTitleList(list, index) {
-    return (
-      <TitleList
-        id={list.id}
-        key={index}
-        darkMode={darkMode}
-        title={list.title}
-      ></TitleList>
-    );
+    return <TitleList id={list.id} key={index}></TitleList>;
   }
 
   function viewItems() {

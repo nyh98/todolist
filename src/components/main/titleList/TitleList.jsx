@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './TitleList.module.css';
 import { TodoListContext } from '../../../context/TodoListContext';
+import { DarkModeContext } from '../../../context/DarkModeContext';
 
-export default function TitleList({ id, darkMode, title }) {
+export default function TitleList({ id }) {
+  const { darkMode } = useContext(DarkModeContext);
   const [todo, setTodo] = useContext(TodoListContext);
   const index = todo.findIndex(list => list.id === id);
 
@@ -40,7 +42,7 @@ export default function TitleList({ id, darkMode, title }) {
             todo[index].checked ? { textDecoration: 'line-through' } : null
           }
         >
-          {title}
+          {todo[index].title}
         </label>
       </div>
       <button className={styles['deleted-button']} onClick={deletedItem}>
