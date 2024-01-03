@@ -7,6 +7,12 @@ export default function InputText() {
   const { darkMode } = useContext(DarkModeContext);
   const [todo, setTodo] = useContext(TodoListContext);
   let text = '';
+
+  function updateTodo() {
+    setTodo(prev => [...prev, { title: text, checked: false }]);
+    document.getElementById('list-input-box').value = '';
+  }
+
   return (
     <nav
       className={
@@ -22,10 +28,9 @@ export default function InputText() {
       />
       <button
         className={styles['input-button']}
-        onClick={e => {
+        onClick={() => {
           if (text) {
-            setTodo(prev => [...prev, { title: text, checked: false }]);
-            document.getElementById('list-input-box').value = '';
+            updateTodo();
           }
         }}
       >

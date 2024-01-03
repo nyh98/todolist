@@ -6,18 +6,27 @@ import { TodoListContext } from '../../../context/TodoListContext';
 export default function TitleList({ title, darkMode }) {
   const [todo, setTodo] = useContext(TodoListContext);
   const index = todo.findIndex(list => list.title === title);
+
+  function checkedItem(e) {
+    setTodo(prev => {
+      prev[index].checked = e.target.checked;
+      return [...prev];
+    });
+  }
+
+  function deletedItem(e) {
+    setTodo(prev => {
+      prev.splice(index, 1);
+      return [...prev];
+    });
+  }
   return (
     <nav className={styles.todoList}>
       <div className="checkList">
         <input
           id="check"
           type="checkbox"
-          onChange={e => {
-            setTodo(prev => {
-              prev[index].checked = e.target.checked;
-              return [...prev];
-            });
-          }}
+          onChange={checkedItem}
           checked={todo[index].checked}
         />
         <label
@@ -31,15 +40,7 @@ export default function TitleList({ title, darkMode }) {
           {title}
         </label>
       </div>
-      <button
-        className={styles['deleted-button']}
-        onClick={() =>
-          setTodo(prev => {
-            prev.splice(index, 1);
-            return [...prev];
-          })
-        }
-      >
+      <button className={styles['deleted-button']} onClick={deletedItem}>
         <MdDelete />
       </button>
     </nav>
