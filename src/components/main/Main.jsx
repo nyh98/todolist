@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './Main.module.css';
 import TitleList from './titleList/TitleList';
-import { DarkModeContext } from '../../context/DarkModeContext';
 import { TodoListContext } from '../../context/TodoListContext';
 import { CurrentViewContext } from '../../context/CurrentViewContext';
 
