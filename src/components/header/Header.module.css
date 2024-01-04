@@ -6,16 +6,5 @@
   border-top-left-radius: 1rem;
   width: 100%;
   height: 12%;
-  background-color: #281a54;
-}
-
-.top-darkMode {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top-right-radius: 1rem;
-  border-top-left-radius: 1rem;
-  width: 100%;
-  height: 12%;
-  background-color: #d2cfcf;
+  background-color: var(--color-side);
 }

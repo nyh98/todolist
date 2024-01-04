@@ -22,10 +22,5 @@
 
 .curren-view-menu {
   height: 1.5px;
-  background-color: white;
-}
-
-.curren-view-menu-darkMode {
-  height: 1.5px;
-  background-color: black;
+  background-color: var(--color-current-view-menu);
 }

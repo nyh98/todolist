@@ -6,18 +6,7 @@
   height: 12%;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  background-color: #281a54;
-}
-
-.inputText-darkMode {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 12%;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  background-color: #d2cfcf;
+  background-color: var(--color-side);
 }
 
 .input-button {

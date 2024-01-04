@@ -1,3 +1,17 @@
+:root {
+  --color-side: #281a54;
+  --color-main: #352c55;
+  --color-text: white;
+  --color-current-view-menu: white;
+}
+
+html.darkMode {
+  --color-side: #d2cfcf;
+  --color-main: white;
+  --color-text: black;
+  --color-current-view-menu: black;
+}
+
 body {
   margin: 0;
 }

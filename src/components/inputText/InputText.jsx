@@ -1,11 +1,9 @@
 import React, { useContext, useState } from 'react';
 import styles from './InputText.module.css';
 import { v4 as uuidv4 } from 'uuid';
-import { DarkModeContext } from '../../context/DarkModeContext';
 import { TodoListContext } from '../../context/TodoListContext';
 
 export default function InputText() {
-  const { darkMode } = useContext(DarkModeContext);
   const [todo, setTodo] = useContext(TodoListContext);
   const [text, setText] = useState('');
 
@@ -28,11 +26,7 @@ export default function InputText() {
   }
 
   return (
-    <section
-      className={
-        darkMode ? styles['inputText-darkMode'] : styles['inputText-basic']
-      }
-    >
+    <section className={styles['inputText-basic']}>
       <input
         type="text"
         placeholder="Add Todo"

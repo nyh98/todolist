@@ -14,11 +14,6 @@
 }
 
 .text-style-basic {
-  color: white;
-  margin-left: 5px;
-}
-
-.text-style-darkMode {
-  color: black;
+  color: var(--color-text);
   margin-left: 5px;
 }

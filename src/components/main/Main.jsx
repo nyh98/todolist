@@ -6,7 +6,6 @@ import { TodoListContext } from '../../context/TodoListContext';
 import { CurrentViewContext } from '../../context/CurrentViewContext';
 
 export default function Main() {
-  const { darkMode } = useContext(DarkModeContext);
   const [todo] = useContext(TodoListContext);
   const { currentView } = useContext(CurrentViewContext);
 
@@ -37,9 +36,5 @@ export default function Main() {
     }
   }
 
-  return (
-    <main className={darkMode ? styles['main-darkMode'] : styles['main-basic']}>
-      {viewItems()}
-    </main>
-  );
+  return <main className={styles['main-basic']}>{viewItems()}</main>;
 }

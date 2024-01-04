@@ -2,10 +2,8 @@ import React, { useContext } from 'react';
 import { MdDelete } from 'react-icons/md';
 import styles from './TitleList.module.css';
 import { TodoListContext } from '../../../context/TodoListContext';
-import { DarkModeContext } from '../../../context/DarkModeContext';
 
 export default function TitleList({ id }) {
-  const { darkMode } = useContext(DarkModeContext);
   const [todo, setTodo] = useContext(TodoListContext);
   const index = todo.findIndex(list => list.id === id);
 
@@ -33,11 +31,7 @@ export default function TitleList({ id }) {
         />
         <label
           htmlFor="check"
-          className={
-            darkMode
-              ? styles['text-style-darkMode']
-              : styles['text-style-basic']
-          }
+          className={styles['text-style-basic']}
           style={
             todo[index].checked ? { textDecoration: 'line-through' } : null
           }
