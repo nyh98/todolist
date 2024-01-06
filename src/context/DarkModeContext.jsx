@@ -23,9 +23,8 @@ export function DarkModeProvider({ children }) {
     }
   }
 
-  updateDarkMode(darkMode); //처음 렌더링시 다크모드 설정
-
   useEffect(() => {
+    updateDarkMode(darkMode);
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
   }, [darkMode]);
 
